@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="杨欣">
+    <title>手写vue</title>
+    <style>
+        div#app {
+            width: 500px;
+            height: 200px;
+            background: #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end
+        }
+
+        div.sub {
+            height: 100px;
+            background: #16f929;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <div class="sub"><span>{{subMessage}}</span></div>
+        <div class="sub"><span>{{subMessage}}</span></div>
+    </div>
+    <!-- <script src="./myvue.js"></script> -->
+    <script src="./myvue2.js"></script>
+    <script>
+        let vue = new Vue({
+            el: "#app",
+            data: {
+                message: 'hello vue',
+                subMessage: 'hello sub message'
+            }
+        })
+        setTimeout(() => {
+            vue.options.data.message="change hello"
+            vue.options.data.subMessage="change sub"
+        }, 1000);
+    </script>
+</body>
+
+</html>
