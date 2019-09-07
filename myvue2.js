@@ -1,5 +1,4 @@
 // proxy版
-// defineProperty版
 class Vue extends EventTarget {
     constructor(options) {
         super();
