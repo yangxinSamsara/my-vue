@@ -30,15 +30,19 @@
         {{message}}
         <div class="sub"><span>{{subMessage}}</span></div>
         <div class="sub"><span>{{subMessage}}</span></div>
+        <div>{{obj.name}}</div>
     </div>
-    <!-- <script src="./myvue.js"></script> -->
-    <script src="./myvue2.js"></script>
+    <script src="./myvue.js"></script>
+    <!-- <script src="./myvue2.js"></script> -->
     <script>
         let vue = new Vue({
             el: "#app",
             data: {
                 message: 'hello vue',
-                subMessage: 'hello sub message'
+                subMessage: 'hello sub message',
+                obj:{
+                    name:"hi"
+                }
             }
         })
         setTimeout(() => {

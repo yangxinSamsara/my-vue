@@ -46,7 +46,12 @@ class Vue extends EventTarget {
                 let reg = /\{\{\s*(\S+)\s*\}\}/g; //匹配{{xx}}  (\S+)括号表示分块 方便下面取到xx
                 if (reg.test(text)) {
                     let $1 = RegExp.$1;
-                    node.textContent = this.options.data[$1]
+                    let arr=$1.split(".")
+                    let str=this.options.data;
+                    arr.forEach(v=>{
+                        str=str[v]
+                    })
+                    node.textContent = str
                     _this.addEventListener($1, e => {
                         node.textContent = e.detail
                     })
